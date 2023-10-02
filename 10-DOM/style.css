@@ -1,0 +1,16 @@
+.list {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.card {
+  border: 1px solid black;
+  box-shadow: 5px 5px;
+  padding: 10px;
+  width: 100px;
+}
+
+.card img {
+  width: 100px;
+}
