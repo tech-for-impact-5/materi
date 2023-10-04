@@ -1,0 +1,9 @@
+.card-custom {
+  background-color: aquamarine;
+  box-shadow: 5px 5px;
+  border: 1px solid black;
+}
+
+.card-custom img {
+  width: 300px;
+}
