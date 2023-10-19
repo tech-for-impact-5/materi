@@ -1,10 +1,14 @@
-import ListPokemon from "./components/list-pokemon"
+import ListPokemon2 from "./components/list-pokemon-2"
 
 function App() {
 
   return (
     <>
-      <ListPokemon />
+      {/* tanpa search */}
+      <ListPokemon1 />
+
+      {/* dengan search */}
+      {/* <ListPokemon2 /> */}
     </>
   )
 }

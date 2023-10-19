@@ -1,31 +1,28 @@
 import React, { useEffect, useState } from "react";
 import CardPokemon from "./card-pokemon";
 
-function ListPokemon() {
+function ListPokemon1() {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
-    async function getPokemon() {
-      const response = await fetch("https://pokeapi.deno.dev/pokemon?limit=20");
-      const data = await response.json();
-      setPokemons(data);
-    }
-
     getPokemon();
   }, []);
 
-  console.log(pokemons);
+  async function getPokemon() {
+    const response = await fetch("https://pokeapi.deno.dev/pokemon?limit=20");
+    const data = await response.json();
+    setPokemons(data);
+  }
 
   return (
     <div>
       <h1>Pokemon</h1>
-
       {pokemons.length == 0 ? (
         <div>Loading...</div>
       ) : (
         <div>
           {pokemons.map((item) => (
-            <CardPokemon key={item.id} pokemon={item} />
+            <CardPokemon key={item.id} pokemon={item} atk={50} />
           ))}
         </div>
       )}
@@ -33,4 +30,4 @@ function ListPokemon() {
   );
 }
 
-export default ListPokemon;
+export default ListPokemon1;
