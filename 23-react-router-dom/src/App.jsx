@@ -1,5 +1,7 @@
-import { Link, Navigate, Route, Routes } from "react-router-dom";
+import { Link, NavLink, Navigate, Route, Routes } from "react-router-dom";
 import ListPokemon from "./components/list-pokemon";
+import DetailPokemon from "./components/detail-pokemon";
+
 import { useState } from "react";
 import Login from "./components/login";
 
@@ -11,19 +13,44 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) => isActive && "active-link"}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => isActive && "active-link"}
+            >
+              About
+            </NavLink>
           </li>
           <li>
-            <Link to="/profile">Profile</Link>
+            <NavLink
+              to="/profile"
+              className={({ isActive }) => isActive && "active-link"}
+            >
+              Profile
+            </NavLink>
           </li>
           <li>
-            <Link to="/pokemon">Pokemon</Link>
+            <NavLink
+              to="/pokemon"
+              className={({ isActive }) => isActive && "active-link"}
+            >
+              Pokemon
+            </NavLink>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <NavLink
+              to="/login"
+              className={({ isActive }) => isActive && "active-link"}
+            >
+              Login
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -38,8 +65,8 @@ function App() {
           element={isLogin ? <Profile /> : <Navigate to="/login" />}
         />
         <Route path="/pokemon" element={<ListPokemon />} />
-        <Route path="/login" element={<Login setIsLogin={setIsLogin}/>} />
-
+        <Route path="/pokemon/:id" element={<DetailPokemon />} />
+        <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
       </Routes>
     </>
   );

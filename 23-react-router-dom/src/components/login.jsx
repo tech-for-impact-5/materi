@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Login({setIsLogin}) {
+  const navigate = useNavigate()
   const [user, setUser] = useState({
     username: "",
     password: ""
@@ -19,6 +21,7 @@ function Login({setIsLogin}) {
     // logic cek username dan password
     // jika lolos maka ubah setIsLogin
     setIsLogin(true)
+    navigate("/pokemon")
   }
 
   return (
