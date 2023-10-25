@@ -46,4 +46,12 @@ export function getTodo() {
   }
 }
 
+export const addTodo = (newTodo) => async (dispatch) => {
+  dispatch(startFetching())
+
+  await axios.post("https://643e1624c72fda4a0bed5b7f.mockapi.io/todo", newTodo)
+
+  dispatch(getTodo())
+}
+
 export default todoReducer
