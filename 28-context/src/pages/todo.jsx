@@ -5,7 +5,7 @@ import TodoInfo from "../components/todo-info";
 
 function Todo() {
   return (
-    <div className="mt-12 p-4 w-[70vw]">
+    <div className="mt-12 p-4 w-full">
       <TodoInput />
       <TodoList />
       <TodoInfo />
