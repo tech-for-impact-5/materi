@@ -4,4 +4,4 @@ let Todos = [
   {id: 3, value: "belajar buat API"}
 ]
 
-module.exports = todos
+module.exports = Todos
