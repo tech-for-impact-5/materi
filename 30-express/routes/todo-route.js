@@ -1,7 +1,6 @@
 const express = require('express');
 const route = express.Router()
 
-const Todo = require("../models/Todos");
 const { getAllTodo, getTodoById, addTodo, editTodoById, deleteTodoById } = require('../controllers/todo-controller');
 
 route.get('/', getAllTodo)
