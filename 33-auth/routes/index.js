@@ -2,7 +2,8 @@ const express = require('express');
 const route = express.Router()
 const todoRoutes = require("./todo-route")
 const authRoutes = require("./auth-route")
-const userRoutes = require("./user-route")
+const userRoutes = require("./user-route");
+const verifyToken = require('../middleware/auth');
 
 
 route.get("/", (req, res) => {
@@ -11,9 +12,9 @@ route.get("/", (req, res) => {
   })
 })
 
-route.use("/todos", todoRoutes)
 route.use("/auth", authRoutes)
 route.use("/users", userRoutes)
+route.use("/todos", verifyToken, todoRoutes)
 
 // route.use("/movies", moviesRoutes)
 
