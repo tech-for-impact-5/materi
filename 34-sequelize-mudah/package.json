@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.18.2",
     "mysql2": "^3.6.3",
     "sequelize": "^6.34.0"

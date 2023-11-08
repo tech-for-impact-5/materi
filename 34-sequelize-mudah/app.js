@@ -3,6 +3,8 @@ const app = express()
 
 const db = require("./config/db");
 const User = require('./models/User');
+const Todo = require('./models/Todo');
+
 
 const allRoutes = require("./routes")
 
@@ -15,6 +17,8 @@ async function testConnection(){
 
     // await db.sync({ force: true });
     // await User.sync({ force: true })
+    // await Todo.sync({ force: true })
+
     console.log("All models were synchronized successfully.");
   } catch (error) {
     console.error('Unable to connect to the database:', error);

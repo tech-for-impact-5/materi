@@ -2,6 +2,8 @@ const express = require('express');
 const route = express.Router()
 
 const userRoutes = require("./user-route.js")
+const todoRoutes = require("./todo-route.js")
+
 
 route.get("/", (req, res) => {
   res.json({
@@ -10,5 +12,6 @@ route.get("/", (req, res) => {
 })
 
 route.use("/users", userRoutes)
+route.use("/todos", todoRoutes)
 
 module.exports = route
